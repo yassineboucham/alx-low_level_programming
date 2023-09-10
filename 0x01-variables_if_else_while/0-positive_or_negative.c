@@ -15,12 +15,12 @@
       n = rand() - RAND_MAX / 2;
       /* your code goes there */
       if(n<0){
-	echo "is positive";
+	printf ("is positive");
       }
       else if(n=0){
-	echo "is zero";
+	printf ("is zero");
       }
       else{
-	echo "is negative";
+	printf ("is negative");
       return (0);
 }
