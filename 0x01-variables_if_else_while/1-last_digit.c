@@ -3,8 +3,8 @@
 #include <stdio.h>
 /**
  * main - the main function²
- * Description:  Last digit 
- * return: the return value is 0
+ * Description: Last digit
+ * Return: the return value is 0
 */
 int main(void)
 {
