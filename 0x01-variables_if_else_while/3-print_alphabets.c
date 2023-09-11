@@ -3,7 +3,7 @@
  * main - the main fuction
  * Return: the return value is 0
 */
-int main(void)
+int main()
 {
 char c1 = 'a', c2 = 'A';
 for (c1 = 'a'; c1 <= 'z'; c1++)
