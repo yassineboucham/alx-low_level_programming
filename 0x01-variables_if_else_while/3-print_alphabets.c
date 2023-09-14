@@ -17,4 +17,5 @@ putchar(c2);
 c2++;
 }
 putchar('\n');
+return (0);
 }
