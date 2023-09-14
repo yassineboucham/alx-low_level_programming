@@ -1,13 +1,11 @@
 #include "main.h"
 /**
- * print_alphabet - the function for printing the alphabet
- * @c: the variable for loping the alphabet
+ * print_alphabet - the function for printing the alphabet**
 */
 void print_alphabet(void)
 {
-char ch = 'a';
-while (ch <= 'z')
+int;
+for (ch = 'a'; ch <= 'z'; ch++)
 {
 _putchar(ch);
-ch++;
 }
