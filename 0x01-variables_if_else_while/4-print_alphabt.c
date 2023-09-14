@@ -14,6 +14,7 @@ if (c != 'q' && c != 'e')
 {
 putchar(c);
 }
+c++;
 }
 return (0);
 }
