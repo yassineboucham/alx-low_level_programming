@@ -5,7 +5,20 @@
 */
 int main(void)
 {
-	int 0;
-	putchar(c);
+	int i;
+
+	for (i = 0; i < 16; i++)
+	{
+		if (i <= 9)
+		{
+			putchar('0' + i);
+		}
+		else
+		{
+			putchar('a' + (i - 10));
+		}
+
+	}
+	putchar('\n');
 	return (0);
 }
