@@ -12,8 +12,10 @@ void fizz_buzz(void)
 		printf("%d Fizz", i);
 		else if (i % 5 == 0 && i % 3 != 0)
 		printf("%d Buzz", i);
-		else
+		else if (i % 5 == 0 && i % 3 == 0)
 		printf("%d FizzBuzz", i);
+		else
+		printf("%d", i);
 	}
 	printf("\n");
 }
