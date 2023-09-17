@@ -11,12 +11,8 @@ if (n > 0)
 {
 	for (i = 1; i <= n; i++)
 	{
-        j = 0;
-        while (j != i)
-        {
-            _putchar(' ');
-            j++;
-        }
+        for (j = 0; j < i; j++)
+            _putchar(' '); 
         _putchar('\\');
   	    _putchar('\n');
 	}
