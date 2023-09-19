@@ -13,4 +13,5 @@ for (i = i / 2; i != '\0'; i++)
 {
 	_putchar(str[i]);
 }
+_putchar('\n');
 }
