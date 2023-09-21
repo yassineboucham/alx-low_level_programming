@@ -14,15 +14,4 @@ void reverse_array(int *a, int n)
 		a[k] = a[j];
 		a[j] = nf;
 	}
-	k = 0;
-	while (k < n)
-	{
-		if (k != 0)
-		{
-			printf(", ");
-		}
-		printf("%d", a[k]);
-		k++;
-	}
-	printf("\n");
 }
