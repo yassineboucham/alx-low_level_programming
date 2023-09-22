@@ -21,20 +21,22 @@ int is_separator(char c)
 */
 char *cap_string(char *str)
 {
+	int i = 0;
 
-	if (*str >= 'a' && *str <= 'z')
-		*str -= 32;
-	for (; *str; str++)
+	if (str[i] >= 'a' && str[i] <= 'z')
+		str[i] -= 32;
+	i++;
+	for (; str[i]; i++)
 	{
-		if (*str >= 'A' && *str <= 'Z')
-			*str += 32;
-		if (is_separator(*str))
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+		if (is_separator(str[i]))
 		{
-			str++;
-			if (*str >= 'a' && *str <= 'z')
-				*str++ -= 32;
-			if (is_separator(*str))
-			str--;
+			i++;
+			if (str[i] >= 'a' && str[i] <= 'z')
+				str[i++] -= 32;
+			if (is_separator(str[i]))
+			i--;
 		}
 	}
 	return (str);
