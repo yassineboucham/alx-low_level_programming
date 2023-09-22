@@ -1,16 +1,27 @@
 #include "main.h"
 /**
+* is_lower - for lower
+* @c: for char
+* Return: 0 if is it lower
+*/
+
+int is_lower(char c)
+{
+	return (c >= 97 && c <= 122);
+}
+/**
 * is_separator - for sepraiter
 * @c: for char
 * Return: 0 if is it seprator
 */
 int is_separator(char c)
 {
-	if (c == ' ' || c == '\t' || c == '\n' ||
-		c == ',' || c == ';' || c == '.' ||
-		c == '!' || c == '?' || c == '"' ||
-		c == '(' || c == ')' || c == '{' || c == '}'
-	)
+	int j;
+
+	char sep[] = " \t\n,;.!?\"(){}";
+
+	for (j = 0; j < 12; j++)
+		if (c == sep[j])
 		return (1);
 	return (0);
 }
@@ -21,29 +32,21 @@ int is_separator(char c)
 */
 char *cap_string(char *str)
 {
-	int i = 0;
-
-	if (str[i] >= 'a' && str[i] <= 'z')
-		str[i] -= 32;
-	i++;
-	for (; str[i]; i++)
+	char *ptr = str;
+	int separator = 1;
+while (*str)
+{
+	if (is_separator(*str))
+	separator = 1;
+	else if (is_lower(*str) && separator)
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-			str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-			str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-			str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
-		{
-			i++;
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i++] -= 32;
-			if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-				str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-				str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-				str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
-			i--;
-		}
+		*str -= 32;
+		separator = 0;
 	}
-	return (str);
+	else
+		separator = 0;
+	str++;
+}
+
+	return (ptr);
 }
