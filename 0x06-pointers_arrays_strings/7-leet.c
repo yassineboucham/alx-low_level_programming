@@ -10,7 +10,7 @@ char *leet(char *str)
 
 	char let[] = {'a', 'e', 'o', 't', 'l'};
 
-	char nb[] = {4, 3, 0, 7, 1};
+	char nb[] = {'4', '3', '0', '7', '1'};
 
 	int i;
 
@@ -19,7 +19,7 @@ char *leet(char *str)
 		for (i = 0; i < 4; i++)
 		{
 			if (*str == let[i] || *str == let[i] - 32)
-			*str = 48 + nb[i];
+			*str = nb[i];
 		}
 		str++;
 	}
