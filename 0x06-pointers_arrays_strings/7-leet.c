@@ -12,11 +12,11 @@ char *leet(char *str)
 
 	int nb[] = {4, 3, 0, 7, 1};
 
-	int i;
+	unsigned int i;
 
 	while (*str)
 	{
-		for (i = 0; i < 4; i++)
+		for (i = 0; i < sizeof(let) / sizeof(char); i++)
 		{
 			if (*str == let[i] || *str == let[i] + 32)
 			*str = 48 + nb[i];
