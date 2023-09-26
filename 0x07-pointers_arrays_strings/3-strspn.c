@@ -13,9 +13,9 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		while (*s != *accept)
 		{
+			i++;
 			if (*accept == '\0')
 			return (i);
-			i++;
 			accept++;
 		}
 		s++;
