@@ -1,45 +1,35 @@
 #include "main.h"
 #include <stddef.h>
 /**
-* *ft_strchr - serch for c
-* @str: pointer
-* @c: char
-* Return: returing str posetion
-*/
-char *ft_strchr(char *str, char c)
-{
-	while (*str)
-	{
-		if (*str == c)
-			return (str);
-		str++;
-	}
-	return (NULL);
-}
-/**
-* *_strstr - a function that locates a substring.
-* @haystack: pointer
-* @needle: poiter
-* Return: returing str posetion
+* _strstr - find the first occurrence of a substring in a string
+* @haystack: the string to search in
+* @needle: the substring to search for
+*
+* Return: a pointer to the beginning of the located substring,
+*         or NULL if the substring is not found.
 */
 char *_strstr(char *haystack, char *needle)
 {
-	char *ptr;
-
 	if (*needle == '\0')
-	{
 		return (haystack);
-	}
-		ptr = ft_strchr(haystack, needle[0]);
-	if (ptr)
+
+	while (*haystack != '\0')
 	{
-		haystack = ptr;
-		while (*ptr && *needle)
+		char *hay_ptr = haystack;
+
+		char *nee_ptr = needle;
+
+		while (*nee_ptr != '\0' && *hay_ptr == *nee_ptr)
 		{
-			if (*ptr++ != *needle++)
-				return (NULL);
+			hay_ptr++;
+			nee_ptr++;
 		}
-	return (haystack);
+
+		if (*nee_ptr == '\0')
+			return (haystack);
+
+		haystack++;
 	}
+
 	return (NULL);
 }
