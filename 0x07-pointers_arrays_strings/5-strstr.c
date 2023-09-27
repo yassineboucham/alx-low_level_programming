@@ -26,7 +26,7 @@ char *_strstr(char *str, char *find)
 {
 	char *ptr;
 
-	if (*find != '\0')
+	if (*find == '\0')
 	{
 		return (str);
 	}

@@ -10,7 +10,7 @@ int main(void)
 {
 	char *s = "hello, world";
 
-	char *f = "";
+	char *f = "world";
 
 	char *t;
 
