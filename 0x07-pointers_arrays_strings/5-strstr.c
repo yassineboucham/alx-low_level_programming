@@ -18,28 +18,28 @@ char *ft_strchr(char *str, char c)
 }
 /**
 * *_strstr - a function that locates a substring.
-* @str: pointer
-* @find: poiter
+* @haystack: pointer
+* @needle: poiter
 * Return: returing str posetion
 */
-char *_strstr(char *str, char *find)
+char *_strstr(char *haystack, char *needle)
 {
 	char *ptr;
 
-	if (*find == '\0')
+	if (*needle == '\0')
 	{
-		return (str);
+		return (haystack);
 	}
-		ptr = ft_strchr(str, find[0]);
+		ptr = ft_strchr(haystack, needle[0]);
 	if (ptr)
 	{
-		str = ptr;
-		while (*ptr && *find)
+		haystack = ptr;
+		while (*ptr && *needle)
 		{
-			if (*ptr++ != *find++)
+			if (*ptr++ != *needle++)
 				return (NULL);
 		}
-	return (str);
+	return (haystack);
 	}
 	return (NULL);
 }
