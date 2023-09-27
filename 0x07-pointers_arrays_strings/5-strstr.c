@@ -25,6 +25,8 @@ char *ft_strchr(char *str, char c)
 char *_strstr(char *str, char *find)
 {
 	char *ptr;
+
+
 		ptr = ft_strchr(str, find[0]);
 	if (ptr)
 	{
@@ -35,6 +37,10 @@ char *_strstr(char *str, char *find)
 				return (NULL);
 		}
 	return (str);
+	}
+	else if (*find != '\0')
+	{
+		return (str);
 	}
 	return (NULL);
 }
