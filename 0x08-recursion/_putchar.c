@@ -1,5 +1,5 @@
-#include "main.h"
 #include <unisdt.h>
+#include "main.h"
 /**
  * _putchar - this function for printing a text as a char
  * @c: the variable for the char
