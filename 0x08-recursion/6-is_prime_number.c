@@ -11,7 +11,7 @@ int f(int n, int j)
 	{
 		return (0);
 	}
-	else if (j >= n * n)
+	else if (j >= n)
 	{
 		return (0);
 	}
