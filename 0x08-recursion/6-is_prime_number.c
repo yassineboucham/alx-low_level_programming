@@ -7,7 +7,11 @@
 */
 int f(int n, int j)
 {
-	if (j >= n * n)
+	if (n < 0)
+	{
+		return (0);
+	}
+	else if (j >= n * n)
 	{
 		return (0);
 	}
