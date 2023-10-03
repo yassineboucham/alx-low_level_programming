@@ -20,9 +20,14 @@ int _atoi(char *s) {
 	else if (*s == '+')
 		s++;
 	while (*s >= '0' && *s <= '9')
-	 {
+	{
 		if (result > (2147483647 - (*s - '0')) / 10)
-			return (sign == 1);
+			{
+			if (sign == 1)
+				return (2147483647);
+			else
+				return (-2147483648);
+			}
 		result = result * 10 + (*s - '0');
 		s++;
 	}
