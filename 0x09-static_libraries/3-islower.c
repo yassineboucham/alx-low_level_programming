@@ -6,6 +6,5 @@
 */
 int _islower(int c)
 {
-	_putchar
 	return (0);
 }

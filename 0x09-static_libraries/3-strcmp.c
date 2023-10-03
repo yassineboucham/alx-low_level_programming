@@ -1,23 +1,23 @@
 #include "main.h"
 /**
-* _strspn - a function that gets the length of a prefix substring.
-* @s: a pointer of a string
-* @accept: a pointer of a string
-* Return: returning i
+* _strcmp - The standard library provides a similar function: strcmp
+* @s1: the s1 var
+* @s2: the S2 var
+* Return: returning res
 */
-unsigned int _strspn(char *s, char *accept)
+int _strcmp(char *s1, char *s2)
 {
-	unsigned int i, j;
+	int res = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s1)
 	{
-		for (j = 0; s[i] != accept[j]; j++)
+		if (*s1 != *s2)
 		{
-			if (accept[j] == '\0')
-			{
-				return (i);
-			}
+			res += (int)*s1 - (int)*s2;
+			break;
 		}
+		s1++;
+		s2++;
 	}
-	return (i);
+	return (res);
 }
