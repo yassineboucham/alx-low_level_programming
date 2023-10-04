@@ -3,7 +3,7 @@
 /**
 * strlent -  returns a pointer to a newly allocated space in memory
 * @str: string
-* Return: i
+* Return: int
 */
 int strlent(char *str)
 {
@@ -26,7 +26,9 @@ char *ptr;
 
 if (!str)
 return (NULL);
-ptr = (char *)malloc(strlent(str) * sizeof(char) + 1);
+ptr = (char *)malloc((strlent(str) + 1) * sizeof(char));
+if (ptr == NULL)
+return (NULL);
 while (str[j])
 {
 	ptr[j] = str[j];
