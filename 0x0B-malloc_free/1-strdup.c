@@ -26,11 +26,12 @@ char *ptr;
 
 if (!str)
 return (NULL);
-ptr = (char *)malloc(strlent(str) * sizeof(char));
+ptr = (char *)malloc(strlent(str) * sizeof(char) + 1);
 while (str[j])
 {
 	ptr[j] = str[j];
 	j++;
 }
+ptr[j] = '\0';
 return (ptr);
 }
