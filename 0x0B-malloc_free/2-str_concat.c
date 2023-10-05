@@ -30,7 +30,9 @@ if (s1 == NULL)
 s1 = "\0";
 if (s2 == NULL)
 s2 = "\0";
-ptr = malloc((size1 + size2) * sizeof(char) + 1);
+else
+{
+	ptr = malloc((size1 + size2) * sizeof(char) + 1);
 if (ptr == 0)
 return (0);
 for (i = 0; i <= (size1 + size2); i++)
@@ -39,6 +41,7 @@ for (i = 0; i <= (size1 + size2); i++)
 		ptr[i] = s1[i];
 	else
 		ptr[i] = s2[i - size1];
+}
 }
 ptr[i] = '\0';
 return (ptr);
