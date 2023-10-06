@@ -1,51 +1,46 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
-* strlent -  returns a pointer to a newly allocated space in memory
+* _strlent - returns the length of a string
 * @s: string
 * Return: int
 */
-int strlent(char *s)
+int _strlent(char *s)
 {
 	int i;
 
 	for (i = 0; s[i] != '\0'; i++)
-	;
+		;
 	return (i);
 }
+
 /**
-* str_concat -  returns a pointer to a newly allocated space in memory
-* @s1: char
-* @s2: char
-* Return: int
+* str_concat - concatenates two strings and returns a pointer to the new string
+* @s1: first string
+* @s2: second string
+* Return: char pointer to the concatenated string
 */
 char *str_concat(char *s1, char *s2)
 {
-int i;
+	int i, j = 0;
 
-char *ptr;
+	char *ptr;
 
-int size1 = strlent(s1);
+	int size1 = (s1 == NULL) ? 0 : _strlent(s1);
 
-int size2 = strlent(s2);
+	int size2 = (s2 == NULL) ? 0 : _strlent(s2);
 
-if (s1 == NULL)
-s1 = "\0";
-if (s2 == NULL)
-s2 = "\0";
-else
-{
-	ptr = malloc((size1 + size2) * sizeof(char) + 1);
-if (ptr == 0)
-return (0);
-for (i = 0; i <= (size1 + size2); i++)
-{
-	if (i < size1)
+	ptr = malloc((size1 + size2 + 1) * sizeof(char));
+	if (ptr == NULL)
+		return (NULL);
+
+	for (i = 0; i < size1; i++)
 		ptr[i] = s1[i];
-	else
-		ptr[i] = s2[i - size1];
-}
-}
-ptr[i] = '\0';
-return (ptr);
+
+	for (j = 0; j < size2; j++)
+		ptr[i + j] = s2[j];
+
+	ptr[i + size2] = '\0';
+	return (ptr);
 }
