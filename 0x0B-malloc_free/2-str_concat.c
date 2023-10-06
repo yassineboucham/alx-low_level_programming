@@ -2,15 +2,15 @@
 #include <stdlib.h>
 /**
 * strlent -  returns a pointer to a newly allocated space in memory
-* @str: string
+* @s: string
 * Return: int
 */
-int strlent(char *str)
+int strlent(char *s)
 {
-	int i = 0;
+	int i;
 
-	while (*str++)
-	i++;
+	for (i = 0; s[i] != '\0'; i++)
+	;
 	return (i);
 }
 /**
@@ -24,8 +24,11 @@ char *str_concat(char *s1, char *s2)
 int i;
 
 char *ptr;
+
 int size1 = strlent(s1);
+
 int size2 = strlent(s2);
+
 if (s1 == NULL)
 s1 = "\0";
 if (s2 == NULL)
