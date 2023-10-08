@@ -1,19 +1,4 @@
 #include "main.h"
-#include <stddef.h>
-#include <stdlib.h>
-/**
-* strl - strlent
-* @str: char
-* Return: int
-*/
-int strl(char *str)
-{
-	int length = 0;
-
-while (*str++)
-length++;
-return (length);
-}
 /**
 * *string_nconcat -  hello worlds
 * @s1: char
@@ -32,8 +17,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	length1 = strl(s1);
-	length2 = strl(s2);
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		length1++;
+	}
+	for (i = 0; s2[i] != '\0'; i++)
+	{
+		length2++;
+	}
 
 	if (n >= length2)
 		n = length2;
@@ -46,9 +37,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	for (i = 0; i < length1; i++)
+	{
 		ptr[i] = s1[i];
-	for (i = 0; i < n ; i++)
-		ptr[length1 + i] = s2[i];
+	}
+	for (; i < n ; i++)
+	{
+		ptr[i] = s2[i];
+	}
 	ptr[length1 + i] = '\0';
 	return (ptr);
 }
