@@ -2,9 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 /**
- * *_strdup - dup
- * @src: char
- * Return: ptr
+* *_strdup - dup
+* @src: char
+* Return: ptr
 */
 char *_strdup(char *src)
 {
@@ -25,16 +25,18 @@ char *_strdup(char *src)
 	return (ptr);
 }
 /**
- * *new_dog -  a function that creates a new dog
- * @name: char
- * @age: float
- * @owner: char
- * Return: new_b
+* *new_dog -  a function that creates a new dog
+* @name: char
+* @age: float
+* @owner: char
+* Return: new_b
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_d;
 
+	if (name == NULL || age < 0 || owner == NULL)
+	return (NULL);
 	new_d = malloc(sizeof(dog_t));
 	if (new_d == NULL)
 	return (NULL);
