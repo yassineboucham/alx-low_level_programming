@@ -21,4 +21,5 @@ va_start(ptr, n);
 	printf("%s", separator);
 	}
 	printf("\n");
+	va_end(ptr);
 }
