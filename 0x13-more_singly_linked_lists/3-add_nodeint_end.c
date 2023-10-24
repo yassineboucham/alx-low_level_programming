@@ -3,7 +3,7 @@
 * add_nodeint_end - adding a node in the end
 * @head: pointer to pointer listint_t
 * @n: const int
-* Retunr: Newnode
+* Return: Newnode
 */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
