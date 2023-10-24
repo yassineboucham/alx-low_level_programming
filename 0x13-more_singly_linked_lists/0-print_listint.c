@@ -1,4 +1,9 @@
 #include "lists.h"
+/**
+ * print_listint - printing linked lists
+ * @h: const listint_t
+ * Return: i
+*/
 size_t print_listint(const listint_t *h)
 {
 	const listint_t *curr;
