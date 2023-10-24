@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
- * free_listint - free the list
- * @head: listint_t
+* free_listint - free the list
+* @head: listint_t
 */
 void free_listint(listint_t *head)
 {
@@ -9,7 +9,8 @@ void free_listint(listint_t *head)
 
 	while (curr != NULL)
 	{
+		head = curr;
 		curr = curr->next;
-		free(curr);
+		free(head);
 	}
 }
