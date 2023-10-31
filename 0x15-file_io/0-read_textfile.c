@@ -1,5 +1,6 @@
 #include "main.h"
 #include <unistd.h>
+#include <fcntl.h>
 /**
  * read_textfile - that reads a text file and prints
  * @filename: const char
@@ -21,8 +22,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (string == NULL)
 	return (0);
 	bytes = read(file, string, letters);
-	i = write(STROUT_FILNO, string, bytes);
-	colse(file);
+	i = write(STDOUT_FILENO, string, bytes);
+	close(file);
 	free(string);
 	return (i);
 }
