@@ -2,10 +2,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 /**
- * read_textfile - that reads a text file and prints
- * @filename: const char
- * @letters: size_t
- * Return: i
+* read_textfile - that reads a text file and prints
+* @filename: const char
+* @letters: size_t
+* Return: i
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -23,6 +23,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	return (0);
 	bytes = read(file, string, letters);
 	i = write(STDOUT_FILENO, string, bytes);
+	if (bytes != i)
+	return (0);
 	close(file);
 	free(string);
 	return (i);
