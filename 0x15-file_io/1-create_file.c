@@ -1,34 +1,37 @@
 #include "main.h"
 /**
-* create_file - create a file
-* @filename: The name that the new created file will had
-* @text_content: String the will be written to @filename file
-* Return: 1 on success, -1 on failure
+ * sstrlen - len of a string
+ * @string: string
+ * Return: lent
+*/
+int sstrlen(char *string)
+{
+	int i = 0;
+
+	while (*string++)
+	i++;
+	return (i);
+}
+/**
+ * create_file -  a function that appends text at the end of a file.
+ * @filename: const char*
+ * @text_content: char*
+ * Return: 1
 */
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
+	int file, wirte;
 
-	int i = 0;
-
-	int size;
-
-	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
-
-	if (fd == -1 || filename == NULL)
-		return (-1);
-
+	if (filename == NULL)
+	return (-1);
 	if (text_content == NULL)
-		return (1);
-
-	while (*(text_content + i))
-		i++;
-
-	size = write(fd, text_content, i);
-
-	if (size == -1)
-		return (-1);
-
-	close(fd);
+	text_content = '';
+	file = open(filename, O_CREAT | O_WRONLY, 0600);
+	if (file == -1)
+	return (-1);
+	write = write(file, text_content, sstrlen(text_content));
+	if (write == -1)
+	return (-1);
+	close(file);
 	return (1);
 }
