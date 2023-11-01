@@ -1,18 +1,5 @@
 #include "main.h"
 /**
- * sstrlen - len of a string
- * @string: string
- * Return: lent
-*/
-int sstrlen(char *string)
-{
-	int i = 0;
-
-	while (*string++)
-	i++;
-	return (i);
-}
-/**
  * create_file -  a function that appends text at the end of a file.
  * @filename: const char*
  * @text_content: char*
