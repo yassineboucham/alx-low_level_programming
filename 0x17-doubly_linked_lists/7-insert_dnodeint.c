@@ -15,9 +15,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				return (NULL);
 			node->prev = crt->prev;
 			node->n = n;
-			crt->prev->next = node;
 			node->next = crt;
-			return (crt);
+			if (crt->prev)
+				crt->prev->next = node;
+			crt->prev = node;
+			return (node);
 		}
 		crt = crt->next;
 	}
