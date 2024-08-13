@@ -19,3 +19,5 @@ oclean:
 
 fclean: oclean
 	$(RM) $(NAME)
+
+re: fclean all
