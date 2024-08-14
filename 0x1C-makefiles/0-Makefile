@@ -1,0 +1,4 @@
+# creat our first makefile
+
+all: main.c
+    gcc main.c -o school
